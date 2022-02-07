@@ -1,0 +1,26 @@
+version: '3.4'
+
+volumes:
+  traefik-certificates:
+
+networks:
+  traefik-public:
+    external: true
+
+services:
+
+  webserver:
+    build: docker/nginx
+    container_name: webserver
+    image: telegram_nginx
+    tty: true
+    volumes:
+      - ./:/var/www/telegram:cached
+      - traefik-certificates:/letsencrypt
+    networks:
+      - traefik-public
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.web.rule=Host(`2022.telegram.de`)"
+      - "traefik.http.routers.web.entrypoints=websecure"
+      - "traefik.http.routers.web.tls.certresolver=letsencryptresolver"
