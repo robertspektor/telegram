@@ -1,4 +1,4 @@
-name: Run Unit Tests and Lint Files
+name:
 "on": push
 jobs:
   unit_test-lint:
@@ -6,7 +6,60 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          npm ci
+          npm install
           npm run build
-          npm run test:unit
-          npm run lint
+          nuxt generate
+
+
+
+
+
+# This is a basic workflow that is triggered on push to main
+
+name: deploy on live server
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out
+        if: success() || failure()
+        uses: actions/checkout@v2
+        with:
+          ref: main
+        run: |
+          npm install
+          npm run build
+          nuxt generate
+
+      - name: Copy files to remote server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.APP_SERVER_IP }}
+          username: ${{ secrets.APP_SERVER_USER }}
+          key: ${{ secrets.APP_KEY }}
+          port: 22
+          source: .
+          target: ${{ secrets.APP_SETUP_FOLDER }}
+
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.APP_SERVER_IP }}
+          username: ${{ secrets.APP_SERVER_USER }}
+          key: ${{ secrets.APP_KEY }}
+          port: 22
+          script: |
+            cd ${{ secrets.APP_SETUP_FOLDER }}
+            chmod +x build.sh
+            sh ./build.sh
