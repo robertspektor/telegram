@@ -1,5 +1,28 @@
 # telegram
 
+## Docker
+
+### Start docker
+
+```
+docker-compose -f docker-compose-prod.yml up --build -d
+```
+
+or 
+
+```
+make docker-up
+```
+
+
+### Shutdown docker
+
+```
+docker-compose -f docker-compose-prod.yml down
+
+```
+
+
 ## Build Setup
 
 ```bash
