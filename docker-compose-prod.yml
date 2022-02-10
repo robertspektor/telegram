@@ -15,7 +15,7 @@ services:
     image: telegram_nginx
     tty: true
     volumes:
-      - ./:/root/telegram:cached
+      - ./:/var/www/telegram:cached
       - traefik-certificates:/letsencrypt
     networks:
       - traefik-public
