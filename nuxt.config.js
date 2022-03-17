@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+const axios = require('axios')
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -38,6 +39,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/truncate.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -47,6 +49,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/composition-api/module',
+    '@pinia/nuxt',
     ['nuxt-fontawesome', {
       component: 'fa', //customize component name
       imports: [{
@@ -65,7 +69,35 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/sitemap'
   ],
+
+  sitemap: {
+    hostname: 'https://telegram.de',
+    gzip: true,
+    exclude: [
+      '/datenschutz',
+      '/impressum'
+    ],
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    },
+    routes: async () => {
+      let groupRoutes = [];
+      const { data } = await axios.get('http://localhost:8005/groups')
+      groupRoutes = data.data.map((group) => `/${group.id}/${group.system_name}`)
+      return groupRoutes;
+    }
+  },
+
+  fontawesome: {
+    icons: {
+      solid: ['faHome'],
+      regular: ['faAdjust']
+    }
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -74,6 +106,14 @@ export default {
     treeShake: true,
     options: {
       customProperties: true
+    },
+    theme: {
+      light: true,  //you don't actually need this line as it's for default
+      themes: {
+        light: {
+          primary: '#0099cc',
+        }
+      }
     }
   },
 

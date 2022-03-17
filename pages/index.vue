@@ -23,6 +23,9 @@ import ShowCase from "../components/ShowCase";
 import Jumbotron from "../components/Jumbotron";
 import Faq from "../components/Faq";
 import C2a2 from "../components/custom/c2a/C2a2";
+import AllCustomComponents from "@/components/custom/AllCustomComponents";
+import Portfolio from "@/components/custom/portfolio/Portfolio";
+import PortfolioText from "@/components/custom/portfolio/PortfolioText";
 export default {
   head() {
     return {
@@ -41,6 +44,9 @@ export default {
     return {};
   },
   components: {
+    PortfolioText,
+    Portfolio,
+    AllCustomComponents,
     C2a2,
     Faq,
     Jumbotron,

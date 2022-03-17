@@ -1,10 +1,7 @@
 <template>
   <div>
-    <div class="mini-spacer">
+    <div class="">
       <v-container>
-        <!-- -----------------------------------------------
-            Start Ui Table
-        ----------------------------------------------- -->
         <v-row justify="center">
           <v-col cols="12" sm="10" md="9" lg="7">
             <div class="text-center">
@@ -12,30 +9,31 @@
             </div>
           </v-col>
         </v-row>
-
-        <!-- -----------------------------------------------
-            End Ui Table
-        ----------------------------------------------- -->
       </v-container>
     </div>
     <div>
+      <div class="text-center pt-15" v-if="store.fetching">
+        <v-progress-circular
+          indeterminate
+          color="primary"
+        ></v-progress-circular>
+      </div>
       <v-container>
-        <v-row justify="center">
-          <v-col cols="12" sm="10" md="9" lg="7">
+        <v-row >
+          <v-col cols="12" >
             <v-card>
               <v-card-text>
                 <v-simple-table>
                   <template v-slot:default>
                     <thead>
                       <tr>
+                        <th class="text-left">Id</th>
                         <th class="text-left">Name</th>
-                        <th class="text-left">Calories</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="item in desserts" :key="item.name">
+                      <tr v-for="item in groups" :key="item.id">
                         <td>{{ item.name }}</td>
-                        <td>{{ item.calories }}</td>
                       </tr>
                     </tbody>
                   </template>
@@ -51,50 +49,9 @@
 <script>
 export default {
   name: "UiTable",
+  props: ['groups'],
   data() {
     return {
-      desserts: [
-        {
-          name: "Frozen Yogurt",
-          calories: 159,
-        },
-        {
-          name: "Ice cream sandwich",
-          calories: 237,
-        },
-        {
-          name: "Eclair",
-          calories: 262,
-        },
-        {
-          name: "Cupcake",
-          calories: 305,
-        },
-        {
-          name: "Gingerbread",
-          calories: 356,
-        },
-        {
-          name: "Jelly bean",
-          calories: 375,
-        },
-        {
-          name: "Lollipop",
-          calories: 392,
-        },
-        {
-          name: "Honeycomb",
-          calories: 408,
-        },
-        {
-          name: "Donut",
-          calories: 452,
-        },
-        {
-          name: "KitKat",
-          calories: 518,
-        },
-      ],
     };
   },
   methods: {},
