@@ -33,7 +33,7 @@ export const useGroups = defineStore("groups-store", {
 
       this.fetching = true;
       const response = await fetch(
-        "http://localhost:8005/groups/" + groupId
+        "https://api.telegram.de/groups/" + groupId
       );
 
       try {
@@ -46,11 +46,11 @@ export const useGroups = defineStore("groups-store", {
 
       this.fetching = false;
     },
-    async fetchGroups() {
+    async fetchGroups(category) {
 
       this.fetching = true;
       const response = await fetch(
-        "http://localhost:8005/groups?page=" + this.currentPage
+        "https://api.telegram.de/groups?page=" + this.currentPage
       );
 
       try {

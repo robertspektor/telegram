@@ -193,7 +193,7 @@ export default {
           categories: this.$refs.CategorySelect.value
         };
 
-        fetch('http://localhost:8005/groups', {
+        fetch('https://api.telegram.de/groups', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

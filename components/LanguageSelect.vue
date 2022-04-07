@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     async getLanguages() {
-      const response = await fetch('http://localhost:8005/languages');
+      const response = await fetch('https://api.telegram.de/languages');
       let data = await response.json();
       this.options = data.data
     }
