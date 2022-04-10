@@ -6,6 +6,7 @@ export const useGroups = defineStore("groups-store", {
       currentPage: 1,
       groups: [],
       group: [],
+      category: '',
       fetching: false,
     };
   },
@@ -46,12 +47,16 @@ export const useGroups = defineStore("groups-store", {
 
       this.fetching = false;
     },
-    async fetchGroups(category) {
+    async fetchGroups() {
+
+      let route = "https://api.telegram.de/groups?page=" + this.currentPage;
+
+      if (this.category !== '') {
+        route += "&category=" + this.category;
+      }
 
       this.fetching = true;
-      const response = await fetch(
-        "https://api.telegram.de/groups?page=" + this.currentPage
-      );
+      const response = await fetch(route);
 
       try {
         this.groups = await response.json();

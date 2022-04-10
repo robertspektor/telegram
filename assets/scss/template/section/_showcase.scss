@@ -210,3 +210,89 @@
     }
   }
 }
+
+/* =========== SPECIAL Media Queries for APP Showcase ============ */
+@media screen and (max-width: 1024px) {
+  .ac-wrapper {
+    font-size: 60%;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .ac-device {
+    margin: 0;
+    width: 100%;
+  }
+  .ac-device h3 {
+    width: 50%;
+    left: 290px;
+  }
+
+  .ac-wrapper h2 {
+    left: 308px;
+    padding: 0;
+    text-align: left;
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 928px) {
+  .ac-grid {
+    width: 90%;
+    left: 5%;
+    margin-left: 0;
+    padding-top: 8em;
+  }
+  .ac-grid a {
+    width: 22%;
+  }
+}
+@media screen and (max-width: 571px) {
+  .ac-wrapper {
+    padding: 0 20px 100px;
+  }
+  .ac-wrapper h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 1em;
+    top: 0;
+    left: auto;
+    position: relative;
+  }
+  .ac-device {
+    margin: 0 auto !important;
+    width: 288px;
+  }
+  .ac-device h3 {
+    position: relative;
+    margin: 0;
+    left: auto;
+    width: 100%;
+    top: 100px;
+    display: block;
+    text-align: center;
+  }
+  .ac-grid a {
+    width: 40%;
+  }
+  .ac-wrapper.ac-gridview .ac-grid a {
+    transform: translateZ(0px) !important;
+  }
+
+  .faq-component img {
+    display: none;
+  }
+  .faq-component .svg-inline--fa {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+  }
+  .faq-component .accordion-heading {
+    margin-top: 5px;
+  }
+  .faq-component .accordion-heading a {
+    font-size: 17px;
+  }
+  .faq-component .accordion-inner {
+    padding-top: 10px;
+  }
+}

@@ -62,6 +62,7 @@
               <v-chip
                 :to="/groups/+category.system_title"
                 v-for="category in categoryStore.getCategories"
+                :class="{'active': category.system_title === groupStore.category}"
                 :key="category.title"
               >
                 {{ category.title }}
@@ -116,9 +117,10 @@
 <script>
 import { useGroups } from "@/stores/groups";
 import { useCategories } from "@/stores/categories";
+import { useRoute } from "@nuxtjs/composition-api";
 
 export default {
-  props: ['category'],
+  props: [],
   data() {
     return {
       countGroups: 0,
@@ -136,10 +138,16 @@ export default {
       groupStore.fetchGroups()
     }
   },
-  setup: function(props) {
+  setup: function() {
 
+    const route = useRoute();
     const groupStore = useGroups();
-    groupStore.fetchGroups(props.category)
+
+    if (typeof route.value.params.byCategory !== 'undefined') {
+      groupStore.category = route.value.params.byCategory;
+    }
+
+    groupStore.fetchGroups()
 
     const categoryStore = useCategories();
     categoryStore.fetch();

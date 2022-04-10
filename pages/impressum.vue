@@ -66,13 +66,7 @@ import C2a2 from "../components/custom/c2a/C2a2";
 export default {
   head() {
     return {
-      title: "Telegram: Impressum",
-      meta: [
-        {
-          hid: "Telegram.de ist deutschsprachige Fanseite der kostenlosen WhatsApp-Alternative Telegram. Sicherer, schneller und einfacher!",
-          name: "Telegram",
-        },
-      ],
+      title: "Telegram: Impressum"
     };
   },
 

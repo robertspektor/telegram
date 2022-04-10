@@ -8,9 +8,9 @@
         <v-row justify="center">
           <v-col cols="12" md="7" lg="6" class="d-flex align-center">
             <div class="text-center text-md-left">
-              <h2 class="formbanner1-title font-weight-bold">
+              <h1 class="formbanner1-title font-weight-bold">
                 Die deutsche Telegram Fanseite
-              </h2>
+              </h1>
               <p class="mt-16 pt-4">
                 Auf dieser Webseite findet ihr allgemeine Informationen zum Messenger. Darüber hinaus pflegen wir ein Übersicht über Gruppen und Kanälen
               </p>

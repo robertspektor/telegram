@@ -9,13 +9,6 @@ export default {
   head() {
     return {
       title: "Telegram - Gruppen",
-      meta: [
-        {
-          hid: "description",
-          name: "Next Ui Kit",
-          content: "Next Ui Kit is the best way",
-        },
-      ],
     };
   },
   components: { GroupList },

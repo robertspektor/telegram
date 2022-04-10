@@ -13,12 +13,12 @@ export default {
     titleTemplate: '%s - telegram',
     title: 'telegram',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'de'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Telegram.de ist deutschsprachige Fanseite der kostenlosen WhatsApp-Alternative Telegram. Sicherer, schneller und einfacher!' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

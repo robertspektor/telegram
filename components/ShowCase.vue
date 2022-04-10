@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="showcase-component mini-spacer">
+    <div class="showcase-component mini-spacer ">
       <br>
       <br>
       <div id="ac-wrapper" class="ac-wrapper" :class="{ 'ac-gridview': gridIsVisible }">

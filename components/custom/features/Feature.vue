@@ -12,7 +12,7 @@
                 <div class="icon-round bg-light-info">
                   <i class="mdi mdi-currency-usd-off"></i>
                 </div>
-                <h5 class="font-weight-medium font-18">Kostenlos</h5>
+                <h2 class="font-weight-medium font-18">Kostenlos</h2>
                 <p class="mt-10 mb-8">
                   Die Telegram App ist kostenlos und das bleibt es auch. Keine Werbung. Keine versteckten Kosten. Das ist zumindest das Versprechen des Betreibers. Telegram kann als Smartphone App unter IOS und Android genutzt werden sowie auf einem PC installiert werden.
                 </p>
@@ -25,7 +25,7 @@
                 <div class="icon-round bg-light-info">
                   <i class="mdi mdi-shield-check"></i>
                 </div>
-                <h5 class="font-weight-medium font-18">Sicher</h5>
+                <h2 class="font-weight-medium font-18">Sicher</h2>
                 <p class="mt-10 mb-8">
                   Telegram verschlüsselt deine Nachrichten. So bist du jederzeit sicher unterwegs
                 </p>
@@ -38,7 +38,7 @@
                 <div class="icon-round bg-light-info">
                   <i class="mdi mdi-cloud-sync"></i>
                 </div>
-                <h5 class="font-weight-medium font-18">Synchronisiert</h5>
+                <h2 class="font-weight-medium font-18">Synchronisiert</h2>
                 <p class="mt-10 mb-8">
                   Telegram kann mit mehreren Geräten gleichzeitig genutzt werden
                 </p>

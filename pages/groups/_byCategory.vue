@@ -8,14 +8,7 @@
   export default {
     head() {
       return {
-        title: "Deutsche Telegram Gruppen und Kanäle | " + this.category,
-        meta: [
-          {
-            hid: "description",
-            name: "Next Ui Kit",
-            content: "Next Ui Kit is the best way",
-          },
-        ],
+        title: "Deutsche Telegram Gruppen und Kanäle | " + this.category
       };
     },
     components: { GroupList },
@@ -26,9 +19,7 @@
     },
     methods: {
 
-    },
-    setup: function() {
+    }
 
-    },
   };
 </script>
