@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     async getCategories() {
-      const response = await fetch('https://api.telegram.de/categories');
+      const response = await fetch('https://api.telegram.de/api/categories');
       let data = await response.json();
       this.options = data.data
     }

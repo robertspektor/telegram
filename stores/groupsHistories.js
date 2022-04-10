@@ -61,7 +61,7 @@ export const useGroupsHistories = defineStore("groups-histories-store", {
       this.finish = false;
 
       const response = await fetch(
-        "https://api.telegram.de/groups/" + groupId + "/history"
+        "https://api.telegram.de/api/groups/" + groupId + "/history"
       );
 
       try {

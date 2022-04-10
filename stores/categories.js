@@ -24,7 +24,7 @@ export const useCategories = defineStore("categories-store", {
       this.finish = false;
 
       const response = await fetch(
-        "https://api.telegram.de/categories"
+        "https://api.telegram.de/api/categories"
       );
 
       try {
