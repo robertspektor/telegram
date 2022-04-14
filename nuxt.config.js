@@ -51,6 +51,7 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/composition-api/module',
     '@pinia/nuxt',
+    '@nuxtjs/google-analytics',
     ['nuxt-fontawesome', {
       component: 'fa', //customize component name
       imports: [{
@@ -66,6 +67,10 @@ export default {
       ]
     }]
   ],
+
+  googleAnalytics: {
+    id: 'UA-2364961-15'
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
