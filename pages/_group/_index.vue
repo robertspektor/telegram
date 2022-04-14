@@ -16,7 +16,14 @@
                 v-model="selection"
                 active-class="deep-purple accent-4 white--text "
                 column>
-                <v-chip label small v-for="category in groupStore.getGroup.categories" :key="category.id">{{ category.title }}</v-chip>
+                <v-chip
+                  :to="/groups/+category.system_title"
+                  label
+                  small
+                  :class="{'active': category.system_title === groupStore.category}"
+                  v-for="category in groupStore.getGroup.categories"
+                  :key="category.id">{{ category.title }}
+                </v-chip>
               </v-chip-group>
             </div>
           </v-col>
@@ -27,12 +34,9 @@
               <v-card-title>Beschreibung</v-card-title>
               <v-card-text><p>{{ groupStore.getGroup.description }}</p></v-card-text>
               <v-card-actions>
-                <v-btn
-                  color="deep-purple lighten-2"
-                  text
-                  @click="join"
-                >
-                  Reserve
+                <v-btn :href="groupStore.getGroup.join_link" target="_blank" color="primary accent-4 white--text" block>
+                  <v-icon>mdi-open-in-new</v-icon>
+                  <span class="ml-2">{{ groupStore.getGroup.join_link }}</span>
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -79,15 +83,13 @@ export default {
     return {
       loading: false,
       groupId: 0,
+      link: "",
     }
   },
   methods: {
     selection: function (event) {
       console.log(event)
     },
-    join: function (event) {
-      console.log(event)
-    }
   },
   setup: function() {
 
@@ -100,7 +102,7 @@ export default {
     const groupsHistoryStore = useGroupsHistories();
     groupsHistoryStore.fetch(groupId);
 
-    return { groupStore, groupsHistoryStore }
+    return { groupStore, groupsHistoryStore };
   },
 };
 </script>

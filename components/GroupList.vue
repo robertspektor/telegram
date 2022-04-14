@@ -1,7 +1,6 @@
 <template>
   <div class="bg-extra-light">
     <div class="">
-
       <v-container>
         <v-row>
           <v-col cols="6">
@@ -24,10 +23,7 @@
             </div>
           </v-col>
         </v-row>
-
-
       </v-container>
-
     </div>
     <div>
       <div class="text-center pt-15" v-if="groupStore.isFetching">
@@ -37,7 +33,6 @@
         ></v-progress-circular>
       </div>
       <v-container>
-
         <v-row >
           <v-col cols="12">
             <div class="float-right">
@@ -51,7 +46,6 @@
             </div>
           </v-col>
         </v-row>
-
         <v-row >
           <v-col cols="12">
             <v-chip-group
@@ -70,7 +64,6 @@
             </v-chip-group>
           </v-col>
         </v-row>
-
         <v-row v-if="!groupStore.isFetching">
           <v-col class="d-flex flex-column" cols="6" v-for="item in groupStore.results" :key="item.id">
             <v-hover
@@ -97,11 +90,16 @@
 
                 <v-card-text class="mt-auto">
                   <v-chip-group
-                    v-model="selection"
                     active-class="deep-purple accent-4 white--text "
                     column
                   >
-                    <v-chip label small v-for="category in item.categories" :key="category.id">{{ category.title }}</v-chip>
+                    <v-chip
+                      :to="/groups/+category.system_title"
+                      label
+                      small
+                      :class="{'active': category.system_title === groupStore.category}"
+                      v-for="category in item.categories" :key="category.id">{{ category.title }}
+                    </v-chip>
                   </v-chip-group>
                 </v-card-text>
 
@@ -129,9 +127,6 @@ export default {
     }
   },
   methods: {
-    selection: function (event) {
-      console.log(event)
-    },
     input: function (number) {
       const groupStore = useGroups();
       groupStore.currentPage = number;
