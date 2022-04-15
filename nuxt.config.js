@@ -92,7 +92,7 @@ export default {
     routes: async () => {
       let groupRoutes = [];
       const { data } = await axios.get('https://api.telegram.de/api/groups')
-      groupRoutes = data.data.map((group) => `/${group.id}/${group.system_name}`)
+      groupRoutes = data.data.map((group) => `/${group.system_name}`)
       return groupRoutes;
     }
   },
