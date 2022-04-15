@@ -17,7 +17,7 @@ export const useGroups = defineStore("groups-store", {
     },
 
     getGroup(state) {
-      return state.group.data;
+      return state.group.data[0];
     },
 
     meta(state) {
@@ -30,11 +30,11 @@ export const useGroups = defineStore("groups-store", {
   },
 
   actions: {
-    async fetchGroup(groupId) {
+    async fetchGroup(groupName) {
 
       this.fetching = true;
       const response = await fetch(
-        "https://api.telegram.de/api/groups/" + groupId
+        "https://api.telegram.de/api/groups?system_name=" + groupName
       );
 
       try {

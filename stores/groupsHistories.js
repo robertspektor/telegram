@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useGroups } from "@/stores/groups";
 
 export const useGroupsHistories = defineStore("groups-histories-store", {
   state: () => {

@@ -71,7 +71,7 @@
               close-delay="100">
 
               <v-card
-                :to="'/'+ item.id + '/' + item.system_name"
+                :to="'/' + item.system_name"
                 :elevation="hover ? 1 : 0"
                 :loading="groupStore.isFetching"
                 :class="{ 'on-hover': hover }"
