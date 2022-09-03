@@ -47,25 +47,9 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/composition-api/module',
-    '@pinia/nuxt',
-    '@nuxtjs/google-analytics',
-    ['nuxt-fontawesome', {
-      component: 'fa', //customize component name
-      imports: [{
-        set: '@fortawesome/free-solid-svg-icons',
-        icons: ['fas']
-      },
-        {set: '@fortawesome/free-brands-svg-icons',
-          icons: ['fab']
-        },
-        {set: '@fortawesome/free-regular-svg-icons',
-          icons: ['far']
-        },
-      ]
-    }]
+    '@pinia/nuxt'
   ],
 
   // googleAnalytics: {
@@ -111,6 +95,10 @@ export default {
     treeShake: true,
     options: {
       customProperties: true
+    },
+    defaultAssets: {
+      font: false,
+      icons: false
     },
     theme: {
       light: true,  //you don't actually need this line as it's for default
