@@ -9,21 +9,20 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/composition-api": "^0.32.0",
+    "@nuxtjs/composition-api": "^0.34.0",
     "@nuxtjs/sitemap": "^2.4.0",
-    "@pinia/nuxt": "^0.1.8",
-    "@vue/composition-api": "^1.4.9",
-    "axios": "^0.26.1",
-    "core-js": "^3.15.1",
-    "node-fetch": "^3.2.3",
-    "nuxt": "^2.15.7",
-    "pinia": "^2.0.11",
-    "vue-apexcharts": "^1.6.2",
-    "vuetify": "^2.5.5"
+    "@pinia/nuxt": "^0.1.9",
+    "axios": "^1.7.9",
+    "core-js": "^3.46.0",
+    "node-fetch": "^3.3.2",
+    "nuxt": "^2.18.1",
+    "pinia": "^2.1.7",
+    "vue-apexcharts": "^1.7.0",
+    "vuetify": "^2.7.2"
   },
   "devDependencies": {
-    "@mdi/font": "^7.0.96",
-    "@nuxtjs/vuetify": "^1.12.1",
+    "@mdi/font": "^7.4.47",
+    "@nuxtjs/vuetify": "^1.12.3",
     "material-design-icons-iconfont": "^6.7.0"
   }
 }
